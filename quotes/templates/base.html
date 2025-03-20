@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quote Generator{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Increase font size for navbar links */
+        .navbar-nav .nav-link {
+            font-size: 18px; /* Increase font size */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" style="font-size: 30px; font-weight: bold;">Company Name</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'quotes:existing_quotes' %}" style="font-weight: bold; color: white;">Existing Quotes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'quotes:create_quote' %}" style="font-weight: bold; color: white;">Create New Quote</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5">
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+    </main>
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>&copy; 2025 Created by Farooq with ❤️. All rights reserved.</p>
+    </footer>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
